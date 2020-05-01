@@ -4,17 +4,20 @@
   "author": "Andrew Keig <andrew.keig@gmail.com>",
   "description": "express-validation is a middleware that validates the body, params, query, headers and cookies of a request and returns a response with errors; if any of the configured validation rules fail.",
   "homepage": "https://github.com/andrewkeig/express-validation",
-  "contributors": [{
-    "name": "Valerio Coltrè",
-    "email": "mister.gamer@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Valerio Coltrè",
+      "email": "mister.gamer@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/andrewkeig/express-validation"
   },
   "dependencies": {
     "joi": "^7.1.0",
-    "lodash": "^4.0.0"
+    "lodash": "^4.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "body-parser": "^1.14.2",
@@ -29,7 +32,9 @@
   "license": "MIT",
   "scripts": {
     "pretest": "eslint lib",
-    "test": "eslint lib && mocha -R spec -b"
+    "test": "eslint lib && mocha -R spec -b",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": "*"
@@ -48,5 +53,6 @@
       "type": "MIT",
       "url": "https://github.com/andrewkeig/express-validation/raw/master/LICENSE"
     }
-  ]
+  ],
+  "snyk": true
 }
